@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing virtual packages &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Using conda with Travis CI" href="use-conda-with-travis-ci.html" />
+    <link rel="prev" title="Managing Python" href="manage-python.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="manage-conda.html">Managing conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-environments.html">Managing environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-channels.html">Managing channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create-custom-channels.html">Creating custom channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-pkgs.html">Managing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-python.html">Managing Python</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing virtual packages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#listing-detected-virtual-packages">Listing detected virtual packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overriding-detected-packages">Overriding detected packages</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="use-conda-with-travis-ci.html">Using conda with Travis CI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view-command-line-help.html">Viewing command-line help</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Tasks</a> &raquo;</li>
+        
+      <li>Managing virtual packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/tasks/manage-virtual.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-virtual-packages">
+<h1>Managing virtual packages<a class="headerlink" href="#managing-virtual-packages" title="제목 주소">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#listing-detected-virtual-packages" id="id1">Listing detected virtual packages</a></li>
+<li><a class="reference internal" href="#overriding-detected-packages" id="id2">Overriding detected packages</a></li>
+</ul>
+</div>
+<p>&quot;Virtual&quot; packages are injected into the conda solver to allow real packages
+to depend on features present on the system that cannot be managed directly by
+conda, like system driver versions or CPU features.  Virtual packages are not
+real packages and not displayed by <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code>.  Instead <code class="docutils literal notranslate"><span class="pre">conda</span></code> runs a
+small bit of code to detect the presence or absence of the system feature that
+corresponds to the package.  The currently supported list of virtual packages includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">_cuda</span></code>: Maximum version of CUDA supported by the display driver</li>
+</ul>
+</div></blockquote>
+<p>Other virtual packages will be added in future conda releases.</p>
+<div class="section" id="listing-detected-virtual-packages">
+<h2><a class="toc-backref" href="#id1">Listing detected virtual packages</a><a class="headerlink" href="#listing-detected-virtual-packages" title="제목 주소">¶</a></h2>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
+<p>To see the list of detected virtual packages, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda list
+</pre></div>
+</div>
+<p>If a package is detected, you will see it listed in the <code class="docutils literal notranslate"><span class="pre">virtual</span> <span class="pre">packages</span></code>
+section, as shown in this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">active</span> <span class="n">environment</span> <span class="p">:</span> <span class="n">base</span>
+   <span class="n">active</span> <span class="n">env</span> <span class="n">location</span> <span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">devenv</span>
+           <span class="n">shell</span> <span class="n">level</span> <span class="p">:</span> <span class="mi">1</span>
+      <span class="n">user</span> <span class="n">config</span> <span class="n">file</span> <span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/.</span><span class="n">condarc</span>
+<span class="n">populated</span> <span class="n">config</span> <span class="n">files</span> <span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/.</span><span class="n">condarc</span>
+         <span class="n">conda</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">4.6</span><span class="o">.</span><span class="mf">3.</span><span class="n">post8</span><span class="o">+</span><span class="mi">8</span><span class="n">f640d35a</span>
+   <span class="n">conda</span><span class="o">-</span><span class="n">build</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">3.17</span><span class="o">.</span><span class="mi">8</span>
+        <span class="n">python</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">3.7</span><span class="o">.</span><span class="mf">2.</span><span class="n">final</span><span class="o">.</span><span class="mi">0</span>
+      <span class="n">virtual</span> <span class="n">packages</span> <span class="p">:</span> <span class="n">_cuda</span><span class="o">=</span><span class="mf">10.0</span>
+      <span class="n">base</span> <span class="n">environment</span> <span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">devenv</span>  <span class="p">(</span><span class="n">writable</span><span class="p">)</span>
+          <span class="n">channel</span> <span class="n">URLs</span> <span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">noarch</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">noarch</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">noarch</span>
+         <span class="n">package</span> <span class="n">cache</span> <span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">devenv</span><span class="o">/</span><span class="n">pkgs</span>
+                         <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/.</span><span class="n">conda</span><span class="o">/</span><span class="n">pkgs</span>
+      <span class="n">envs</span> <span class="n">directories</span> <span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">devenv</span><span class="o">/</span><span class="n">envs</span>
+                         <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">demo</span><span class="o">/.</span><span class="n">conda</span><span class="o">/</span><span class="n">envs</span>
+              <span class="n">platform</span> <span class="p">:</span> <span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+            <span class="n">user</span><span class="o">-</span><span class="n">agent</span> <span class="p">:</span> <span class="n">conda</span><span class="o">/</span><span class="mf">4.6</span><span class="o">.</span><span class="mf">3.</span><span class="n">post8</span><span class="o">+</span><span class="mi">8</span><span class="n">f640d35a</span> <span class="n">requests</span><span class="o">/</span><span class="mf">2.21</span><span class="o">.</span><span class="mi">0</span> <span class="n">CPython</span><span class="o">/</span><span class="mf">3.7</span><span class="o">.</span><span class="mi">2</span> <span class="n">Darwin</span><span class="o">/</span><span class="mf">17.7</span><span class="o">.</span><span class="mi">0</span> <span class="n">OSX</span><span class="o">/</span><span class="mf">10.13</span><span class="o">.</span><span class="mi">6</span>
+               <span class="n">UID</span><span class="p">:</span><span class="n">GID</span> <span class="p">:</span> <span class="mi">502</span><span class="p">:</span><span class="mi">20</span>
+            <span class="n">netrc</span> <span class="n">file</span> <span class="p">:</span> <span class="kc">None</span>
+          <span class="n">offline</span> <span class="n">mode</span> <span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="overriding-detected-packages">
+<h2><a class="toc-backref" href="#id2">Overriding detected packages</a><a class="headerlink" href="#overriding-detected-packages" title="제목 주소">¶</a></h2>
+<p>For troubleshooting, it is possible to override virtual package detection
+using an environment variable.  Supported variables include:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CONDA_OVERRIDE_CUDA</span></code> - CUDA version number or set to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> for no CUDA
+detected.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use-conda-with-travis-ci.html" class="btn btn-neutral float-right" title="Using conda with Travis CI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manage-python.html" class="btn btn-neutral" title="Managing Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

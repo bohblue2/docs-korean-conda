@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting started with conda &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="Installation" href="install/index.html" />
+    <link rel="prev" title="Installing with conda" href="concepts/installing-with-conda.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/index.html">Concepts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started with conda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#before-you-start">Before you start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contents">Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#starting-conda">Starting conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-conda">Managing conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-environments">Managing Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-python">Managing Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-packages">Managing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-information">More information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User guide</a> &raquo;</li>
+        
+      <li>Getting started with conda</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user-guide/getting-started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-conda">
+<h1>Getting started with conda<a class="headerlink" href="#getting-started-with-conda" title="제목 주소">¶</a></h1>
+<p id="navigator-starting">Conda is a powerful package manager and environment manager that
+you use with command line commands at the Anaconda Prompt for Windows,
+or in a terminal window for macOS or Linux.</p>
+<p>This 20-minute guide to getting started with conda lets you try out
+the major features of conda. You should understand how conda works
+when you finish this guide.</p>
+<p>SEE ALSO: <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/getting-started">Getting started with Anaconda Navigator</a>, a
+graphical user interface that lets you use conda in a web-like interface
+without having to enter manual commands. Compare the Getting started
+guides for each to see which program you prefer.</p>
+<div class="section" id="before-you-start">
+<h2>Before you start<a class="headerlink" href="#before-you-start" title="제목 주소">¶</a></h2>
+<p>You should have already <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">installed
+Anaconda</a>.</p>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="제목 주소">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#starting-conda"><span class="std std-ref">Starting conda</span></a> on Windows, macOS, or Linux. 2 MINUTES</li>
+<li><a class="reference internal" href="#managing-conda"><span class="std std-ref">Managing conda</span></a>. Verify that Anaconda is installed and check that conda is updated to the current version. 3 MINUTES</li>
+<li><a class="reference internal" href="#managing-envs"><span class="std std-ref">Managing environments</span></a>. Create <a class="reference internal" href="concepts/environments.html"><span class="doc">environments</span></a> and move easily between them.  5 MINUTES</li>
+<li><a class="reference internal" href="#managing-python"><span class="std std-ref">Managing Python</span></a>. Create an environment that has a different version of Python. 5 MINUTES</li>
+<li><a class="reference internal" href="#managing-pkgs"><span class="std std-ref">Managing packages</span></a>. Find packages available for you to install. Install packages. 5 MINUTES</li>
+</ul>
+</div></blockquote>
+<p>TOTAL TIME: 20 MINUTES</p>
+</div>
+<div class="section" id="starting-conda">
+<span id="id1"></span><h2>Starting conda<a class="headerlink" href="#starting-conda" title="제목 주소">¶</a></h2>
+<p><strong>Windows</strong></p>
+<ul class="simple">
+<li>From the Start menu, search for and open &quot;Anaconda Prompt.&quot;</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/anaconda-prompt.png"><img alt="../_images/anaconda-prompt.png" src="../_images/anaconda-prompt.png" style="width: 50%;" /></a>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>On Windows, all commands below are typed into the Anaconda Prompt window.</p>
+<p><strong>MacOS</strong></p>
+<ul class="simple">
+<li>Open Launchpad, then click the terminal icon.</li>
+</ul>
+<p>On macOS, all commands below are typed into the terminal window.</p>
+<p><strong>Linux</strong></p>
+<ul class="simple">
+<li>Open a terminal window.</li>
+</ul>
+<p>On Linux, all commands below are typed into the terminal window.</p>
+</div>
+<div class="section" id="managing-conda">
+<span id="id2"></span><h2>Managing conda<a class="headerlink" href="#managing-conda" title="제목 주소">¶</a></h2>
+<p>Verify that conda is installed and running on your system by typing:</p>
+<blockquote>
+<div><div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Conda displays the number of the version that you have installed. You do not
+need to navigate to the Anaconda directory.</p>
+<p>EXAMPLE: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">4.4.9</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">If you get an error message, make sure you closed and re-opened the
+terminal window after installing, or do it now. Then verify that you are logged
+into the same user account that you used to install Anaconda or Miniconda.</p>
+</div>
+<p>Update conda to the current version. Type the following:</p>
+<blockquote>
+<div><div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Conda compares versions and then displays what is available to install.</p>
+<p>If a newer version of conda is available, type <code class="docutils literal notranslate"><span class="pre">y</span></code> to update:</p>
+<blockquote>
+<div><div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">참고</p>
+<p class="last">We recommend that you always keep conda updated to the latest version.</p>
+</div>
+</div>
+<div class="section" id="managing-environments">
+<span id="managing-envs"></span><h2>Managing Environments<a class="headerlink" href="#managing-environments" title="제목 주소">¶</a></h2>
+<p>Conda allows you to create separate environments containing files, packages
+and their dependencies that will not interact with other environments.</p>
+<p>When you begin using conda, you already have a default environment named
+<code class="docutils literal notranslate"><span class="pre">base</span></code>. You don't want to put programs into your base environment, though.
+Create separate environments to keep your programs isolated from each other.</p>
+<ol class="arabic">
+<li><p class="first">Create a new environment and install a package in it.</p>
+<p>We will name the environment <code class="docutils literal notranslate"><span class="pre">snowflakes</span></code> and install the package
+BioPython. At the Anaconda Prompt or in your terminal window, type
+the following:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snowflakes</span> <span class="n">biopython</span>
+</pre></div>
+</div>
+<p>Conda checks to see what additional packages (&quot;dependencies&quot;)
+Biopython will need, and asks if you want to proceed:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
+<p>Type &quot;y&quot; and press Enter to proceed.</p>
+</li>
+<li><p class="first">To use, or &quot;activate&quot; the new environment, type the following:</p>
+<ul class="simple">
+<li>Windows: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Linux and macOS: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> only works on conda 4.6 and later versions.</p>
+</div>
+<p>For conda versions prior to 4.6, type:</p>
+<ul class="simple">
+<li>Windows: <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Linux and macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+</ul>
+<p>Now that you are in your <code class="docutils literal notranslate"><span class="pre">snowflakes</span></code> environment, any conda
+commands you type will go to that environment until
+you deactivate it.</p>
+</li>
+<li><p class="first">To see a list of all your environments, type:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>A list of environments appears, similar to the following:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">environments</span><span class="p">:</span>
+
+    <span class="n">base</span>           <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Anaconda3</span>
+    <span class="n">snowflakes</span>   <span class="o">*</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">snowflakes</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">참고</p>
+<p class="last">The active environment is the one with an asterisk (*).</p>
+</div>
+</li>
+<li><p class="first">Change your current environment back to the default (base):
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p>For versions prior to conda 4.6, use:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Windows:  <code class="docutils literal notranslate"><span class="pre">activate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">참고</p>
+<p class="last">When the environment is deactivated, its name is no
+longer shown in your prompt, and the asterisk (*) returns to base.
+To verify, you can repeat the  <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></code> command.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="managing-python">
+<span id="id3"></span><h2>Managing Python<a class="headerlink" href="#managing-python" title="제목 주소">¶</a></h2>
+<p>When you create a new environment, conda installs the same Python version you
+used when you downloaded and installed Anaconda. If you want to use a different
+version of Python, for example Python 3.5, simply create a new environment and
+specify the version of Python that you want.</p>
+<ol class="arabic">
+<li><p class="first">Create a new environment named &quot;snakes&quot; that contains Python 3.5:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.5</span>
+</pre></div>
+</div>
+<p>When conda asks if you want to proceed, type &quot;y&quot; and press Enter.</p>
+</li>
+<li><p class="first">Activate the new environment:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Windows:  <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+<li>Linux, macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Verify that the snakes environment has been added and is active:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Conda displays the list of all environments with an asterisk (*)
+after the name of the active environment:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+<span class="n">base</span>                     <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda3</span>
+<span class="n">snakes</span>                <span class="o">*</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">snakes</span>
+<span class="n">snowflakes</span>               <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">snowflakes</span>
+</pre></div>
+</div>
+<p>The active environment is also displayed in front of your prompt in
+(parentheses) or [brackets] like this:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>(snakes) $
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify which version of Python is in your current
+environment:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Deactivate the snakes environment and return to base environment:
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<dl class="last docutils">
+<dt>For versions prior to conda 4.6, use:</dt>
+<dd><ul class="first last simple">
+<li>Windows:  <code class="docutils literal notranslate"><span class="pre">activate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span></code></li>
+</ul>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="managing-packages">
+<span id="managing-pkgs"></span><h2>Managing packages<a class="headerlink" href="#managing-packages" title="제목 주소">¶</a></h2>
+<p>In this section, you check which packages you have installed,
+check which are available and look for a specific package and
+install it.</p>
+<ol class="arabic">
+<li><p class="first">To find a package you have already installed, first activate the environment
+you want to search. Look above for the commands to
+<a class="reference internal" href="#managing-envs"><span class="std std-ref">activate your snakes environment</span></a>.</p>
+</li>
+<li><p class="first">Check to see if a package you have not installed named
+&quot;beautifulsoup4&quot; is available from the Anaconda repository
+(must be connected to the Internet):</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">beautifulsoup4</span>
+</pre></div>
+</div>
+<p>Conda displays a list of all packages with that name on the Anaconda
+repository, so we know it is available.</p>
+</li>
+<li><p class="first">Install this package into the current environment:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check to see if the newly installed program is in this environment:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="제목 주소">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="cheatsheet.html"><span class="doc">Conda cheat sheet</span></a></li>
+<li>Full documentation--- <a class="reference external" href="https://conda.io/docs/">https://conda.io/docs/</a></li>
+<li>Free community support--- <a class="reference external" href="https://groups.google.com/a/anaconda.com/forum/#!forum/anaconda">https://groups.google.com/a/anaconda.com/forum/#!forum/anaconda</a></li>
+<li>Paid support options--- <a class="reference external" href="https://www.anaconda.com/support/">https://www.anaconda.com/support/</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install/index.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="concepts/installing-with-conda.html" class="btn btn-neutral" title="Installing with conda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

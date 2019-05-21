@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RPM and Debian Repositories for Miniconda &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Configuration" href="../configuration/index.html" />
+    <link rel="prev" title="Testing your installation" href="test-installation.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#system-requirements">System requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#regular-installation">Regular installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#installing-in-silent-mode">Installing in silent mode</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#installing-conda-on-a-system-that-has-other-python-installations-or-packages">Installing conda on a system that has other Python installations or packages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="download.html">Downloading conda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="windows.html">Installing on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="macos.html">Installing on macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="linux.html">Installing on Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-installation.html">Testing your installation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">RPM and Debian Repositories for Miniconda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Installation</a> &raquo;</li>
+        
+      <li>RPM and Debian Repositories for Miniconda</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/install/rpm-debian.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rpm-and-debian-repositories-for-miniconda">
+<h1>RPM and Debian Repositories for Miniconda<a class="headerlink" href="#rpm-and-debian-repositories-for-miniconda" title="제목 주소">¶</a></h1>
+<p>Conda, the package manager from Anaconda, is now available as either a RedHat RPM or as a Debian package. The packages are the equivalent to the Miniconda installer which only contains conda and its dependencies. You can use yum or apt-get to install, uninstall and manage conda on your system. To install conda, follow the instructions for your Linux distribution.</p>
+<p>To install the RPM on RedHat, CentOS, Fedora distributions, and other RPM-based distributions such as openSUSE, download the gpg key and add a repository configuration file for conda.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Import our gpg public key
+rpm --import https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
+
+# Add the Anaconda repository
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/conda.repo
+[conda]
+name=Conda
+baseurl=https://repo.anaconda.com/pkgs/misc/rpmrepo/conda
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
+EOF
+</pre></div>
+</div>
+<p>Conda is ready to install on your RPM-based distribution.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  # Install it!
+  yum install conda
+  Loaded plugins: fastestmirror, ovl
+  Setting up Install Process
+  Loading mirror speeds from cached hostfile
+   * base: repo1.dal.innoscale.net
+   * extras: mirrordenver.fdcservers.net
+   * updates: mirror.tzulo.com
+  Resolving Dependencies
+  --&gt; Running transaction check
+  ---&gt; Package conda.x86_64 0:4.5.11-0 will be installed
+  --&gt; Finished Dependency Resolution
+
+  Dependencies Resolved
+
+
+===============================================================================
+  Package         Arch        Version             Repository            Size
+
+===============================================================================
+  Installing:
+  conda           x86_64      4.5.11-0            conda                 73 M
+
+  Transaction Summary
+
+===============================================================================
+  Install      1 Package(s)
+
+  Total download size: 73 M
+  Installed size: 210 M
+  Is this ok [y/N]:
+</pre></div>
+</div>
+<p>To install on Debian-based Linux distributions such as Ubuntu, download the public gpg key and add the conda repository to the sources list.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Install our public gpg key to trusted store
+curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --
+dearmor &gt; conda.gpg
+install -o root -g root -m 644 conda.gpg /etc/apt/trusted.gpg.d/
+
+# Add our Debian repo
+echo &quot;deb [arch=amd64] https://repo.anaconda.com/pkgs/misc/debrepo/conda
+stable main&quot; &gt; /etc/apt/sources.list.d/conda.list
+</pre></div>
+</div>
+<p>Conda is ready to install on your Debian-based distribution.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Install it!
+apt-get update
+apt-get install conda
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+conda
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 76.3 MB of archives.
+After this operation, 221 MB of additional disk space will be used.
+Get:1 https://repo.anaconda.com/pkgs/misc/debrepo/conda stable/main amd64
+conda amd64 4.5.11-0 [76.3 MB]
+Fetched 76.3 MB in 10s (7733 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package conda.
+(Reading database ... 4799 files and directories currently installed.)
+Preparing to unpack .../conda_4.5.11-0_amd64.deb ...
+Unpacking conda (4.5.11-0) ...
+Setting up conda (4.5.11-0) …
+</pre></div>
+</div>
+<p>Check to see if the installation is successful by typing:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source /opt/conda/etc/profile.d/conda.sh
+conda -V
+conda 4.5.11
+</pre></div>
+</div>
+<p>Installing conda packages with the system package manager makes it very easy to distribute conda across a cluster of machines running Linux without having to worry about any non privileged user modifying the installation. Any non privileged user simply needs to run <cite>source/opt/conda/etc/profile.d/conda.sh</cite> to use conda.</p>
+<p>Administrators can also distribute a .condarc file at /opt/conda/.condarc so that a predefined configuration for channels, package cache directory and environment locations is pre-seeded to all users in a large organization. A sample configuration could look like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>channels:
+defaults
+pkg_dirs:
+/shared/conda/pkgs
+$HOME/.conda/pkgs
+envs_dirs:
+/shared/conda/envs
+$HOME/.conda/envs
+</pre></div>
+</div>
+<p>These RPM and Debian packages provide another way to set up conda inside a Docker container.</p>
+<p>It is recommended to use this installation in a read-only manner and upgrade conda using the respective package manager only.</p>
+<p>If you’re new to conda, check out the documentation at <a class="reference external" href="https://conda.io/docs/">https://conda.io/docs/</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configuration/index.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="test-installation.html" class="btn btn-neutral" title="Testing your installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

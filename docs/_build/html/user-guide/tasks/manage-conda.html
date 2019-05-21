@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing conda &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Managing environments" href="manage-environments.html" />
+    <link rel="prev" title="Tasks" href="index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verifying-that-conda-is-installed">Verifying that conda is installed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#determining-your-conda-version">Determining your conda version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-conda-to-the-current-version">Updating conda to the current version</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="manage-environments.html">Managing environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-channels.html">Managing channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create-custom-channels.html">Creating custom channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-pkgs.html">Managing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-python.html">Managing Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-virtual.html">Managing virtual packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-conda-with-travis-ci.html">Using conda with Travis CI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view-command-line-help.html">Viewing command-line help</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Tasks</a> &raquo;</li>
+        
+      <li>Managing conda</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/tasks/manage-conda.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-conda">
+<h1>Managing conda<a class="headerlink" href="#managing-conda" title="제목 주소">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#verifying-that-conda-is-installed" id="id1">Verifying that conda is installed</a></li>
+<li><a class="reference internal" href="#determining-your-conda-version" id="id2">Determining your conda version</a></li>
+<li><a class="reference internal" href="#updating-conda-to-the-current-version" id="id3">Updating conda to the current version</a></li>
+</ul>
+</div>
+<div class="section" id="verifying-that-conda-is-installed">
+<h2><a class="toc-backref" href="#id1">Verifying that conda is installed</a><a class="headerlink" href="#verifying-that-conda-is-installed" title="제목 주소">¶</a></h2>
+<p>To verify that conda is installed, in your Terminal window or an Anaconda Prompt, run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Conda responds with the version number that you have installed,
+such as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">3.11.0</span></code>.</p>
+<p>If you get an error message, make sure of the following:</p>
+<ul class="simple">
+<li>You are logged into the same user account that you used to
+install Anaconda or Miniconda.</li>
+<li>You are in a directory that Anaconda or Miniconda can find.</li>
+<li>You have closed and re-opened the Terminal window after
+installing conda.</li>
+</ul>
+</div>
+<div class="section" id="determining-your-conda-version">
+<h2><a class="toc-backref" href="#id2">Determining your conda version</a><a class="headerlink" href="#determining-your-conda-version" title="제목 주소">¶</a></h2>
+<p>In addition to the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> command explained above,
+you can determine what conda version is installed by running
+one of the following commands in your Terminal window or an Anaconda Prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda info
+</pre></div>
+</div>
+<p>OR</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda -V
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-conda-to-the-current-version">
+<h2><a class="toc-backref" href="#id3">Updating conda to the current version</a><a class="headerlink" href="#updating-conda-to-the-current-version" title="제목 주소">¶</a></h2>
+<p>To update conda, in your Terminal window or an Anaconda Prompt, run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre></div>
+</div>
+<p>Conda compares versions and reports what is available to install.
+It also tells you about other packages that will be automatically
+updated or changed with the update. If conda reports that a newer
+version is available, type <code class="docutils literal notranslate"><span class="pre">y</span></code> to update:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manage-environments.html" class="btn btn-neutral float-right" title="Managing environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

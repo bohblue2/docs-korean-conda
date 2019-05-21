@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using conda on Windows XP with or without a proxy &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Disabling SSL verification" href="disable-ssl-verification.html" />
+    <link rel="prev" title="Improving interoperability with pip" href="pip-interoperability.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="use-condarc.html">Using the .condarc conda configuration file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample-condarc.html">Sample .condarc file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="admin-multi-user-install.html">Administering a multi-user conda installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enable-tab-completion.html">Enabling tab completion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pip-interoperability.html">Improving interoperability with pip</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using conda on Windows XP with or without a proxy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-proxy-with-windows-xp">Using a proxy with Windows XP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="disable-ssl-verification.html">Disabling SSL verification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Configuration</a> &raquo;</li>
+        
+      <li>Using conda on Windows XP with or without a proxy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/configuration/use-winxp-with-proxy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-conda-on-windows-xp-with-or-without-a-proxy">
+<h1>Using conda on Windows XP with or without a proxy<a class="headerlink" href="#using-conda-on-windows-xp-with-or-without-a-proxy" title="제목 주소">¶</a></h1>
+<p>Although Windows XP mainstream support and Extended Support from
+Microsoft have ended, and Windows XP is no longer one of the
+target systems supported by Anaconda, some users have had success
+using Anaconda on Windows XP with the methods described on this
+page.</p>
+<p>Anaconda 2.3.0 is the last version of Python 3-based Anaconda
+to support Windows XP. Anaconda 2.4 and later have a version of
+Python 3 built with Visual Studio 2015, which by default does not
+support Windows XP.</p>
+<p>You can install Anaconda 2.3.0 and then update it with
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--all</span></code>. Download
+<code class="docutils literal notranslate"><span class="pre">Anaconda3-2.3.0-Windows-x86.exe</span></code> at
+<a class="reference external" href="https://repo.continuum.io/archive/">https://repo.continuum.io/archive/</a>. Install it in any location,
+such as <code class="docutils literal notranslate"><span class="pre">C:\Anaconda</span></code>.</p>
+<div class="section" id="using-a-proxy-with-windows-xp">
+<h2>Using a proxy with Windows XP<a class="headerlink" href="#using-a-proxy-with-windows-xp" title="제목 주소">¶</a></h2>
+<p>To configure conda for use behind a corporate proxy that uses
+proxy auto-config (PAC) files and SSL certificates for secure
+connections:</p>
+<ol class="arabic simple">
+<li>Find a proxy server address from the PAC file:<ol class="arabic">
+<li>Open Internet Explorer.</li>
+<li>From the <strong>Tools</strong> menu, select Internet Options, and then
+click the <strong>Connections</strong> tab.</li>
+<li>On the <strong>Connections</strong> tab, click the LAN Settings button.</li>
+<li>In the LAN Settings dialog box, copy the address under
+the Use automatic configuration script checkbox.</li>
+<li>Click the Cancel button to close the LAN settings.</li>
+<li>Click the Cancel button to close the Internet Options.</li>
+<li>Paste the address into the Internet Explorer address bar,
+then press the Enter key.</li>
+<li>In the PAC file that opens, search for <code class="docutils literal notranslate"><span class="pre">return</span></code> until you
+find what looks like a proxy IP or DNS address with the
+port number, which may take some time in a long file.</li>
+<li>Copy the address and port number.</li>
+</ol>
+</li>
+<li>Follow the <a class="reference internal" href="use-condarc.html#config-overview"><span class="std std-ref">.condarc instructions</span></a>
+to create a file named <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> in your home directory or
+the installation directory, such as <code class="docutils literal notranslate"><span class="pre">C:\Anaconda\.condarc</span></code>.</li>
+<li>Follow the <a class="reference internal" href="use-condarc.html#config-proxy"><span class="std std-ref">.condarc proxy server instructions</span></a> to add proxy information to the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>
+file.</li>
+</ol>
+<p>If you decide to include any passwords, be aware of
+transformations that can affect special characters.</p>
+<p>EXAMPLE: This example shows proxy information with passwords:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proxy_servers</span><span class="p">:</span>
+  <span class="n">http</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="k">pass</span><span class="nd">@corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
+  <span class="n">https</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="k">pass</span><span class="nd">@corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
+
+<span class="n">ssl_verify</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>If you include proxy information without passwords, you will be
+asked to answer authentication prompts at the command line.</p>
+<p>EXAMPLE: This example shows proxy information without passwords:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proxy_servers</span><span class="p">:</span>
+  <span class="n">http</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
+  <span class="n">https</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
+
+<span class="n">ssl_verify</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Once the proxy is configured, you can run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>
+and then create and manage environments with the Anaconda
+Launcher GUI.</p>
+<p>Some packages such as <code class="docutils literal notranslate"><span class="pre">flask-login</span></code> may not be available
+through conda, so you may need to use pip to install them:</p>
+<ol class="arabic">
+<li><p class="first">To use pip securely over https:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">host</span> <span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="n">package</span><span class="o">-</span><span class="n">name</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If the secure https proxy fails, you can force pip to use an
+insecure http proxy instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">host</span> <span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="n">package</span><span class="o">-</span><span class="n">name</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="disable-ssl-verification.html" class="btn btn-neutral float-right" title="Disabling SSL verification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pip-interoperability.html" class="btn btn-neutral" title="Improving interoperability with pip" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

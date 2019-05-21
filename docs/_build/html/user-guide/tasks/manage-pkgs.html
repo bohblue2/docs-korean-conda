@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing packages &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Managing Python" href="manage-python.html" />
+    <link rel="prev" title="Creating custom channels" href="create-custom-channels.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="manage-conda.html">Managing conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-environments.html">Managing environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-channels.html">Managing channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create-custom-channels.html">Creating custom channels</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing packages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#searching-for-packages">Searching for packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-packages">Installing packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-packages-from-anaconda-org">Installing packages from Anaconda.org</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-non-conda-packages">Installing non-conda packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-commercial-packages">Installing commercial packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-a-list-of-installed-packages">Viewing a list of installed packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-packages">Updating packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preventing-packages-from-updating-pinning">Preventing packages from updating (pinning)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-packages">Removing packages</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="manage-python.html">Managing Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-virtual.html">Managing virtual packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-conda-with-travis-ci.html">Using conda with Travis CI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view-command-line-help.html">Viewing command-line help</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Tasks</a> &raquo;</li>
+        
+      <li>Managing packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/tasks/manage-pkgs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-packages">
+<h1>Managing packages<a class="headerlink" href="#managing-packages" title="제목 주소">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#searching-for-packages" id="id1">Searching for packages</a></li>
+<li><a class="reference internal" href="#installing-packages" id="id2">Installing packages</a></li>
+<li><a class="reference internal" href="#installing-packages-from-anaconda-org" id="id3">Installing packages from Anaconda.org</a></li>
+<li><a class="reference internal" href="#installing-non-conda-packages" id="id4">Installing non-conda packages</a></li>
+<li><a class="reference internal" href="#installing-commercial-packages" id="id5">Installing commercial packages</a></li>
+<li><a class="reference internal" href="#viewing-a-list-of-installed-packages" id="id6">Viewing a list of installed packages</a></li>
+<li><a class="reference internal" href="#updating-packages" id="id7">Updating packages</a></li>
+<li><a class="reference internal" href="#preventing-packages-from-updating-pinning" id="id8">Preventing packages from updating (pinning)</a></li>
+<li><a class="reference internal" href="#removing-packages" id="id9">Removing packages</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">There are many options available for the commands described
+on this page. For details, see <a class="reference internal" href="../../commands.html"><span class="doc">Command reference</span></a>.</p>
+</div>
+<div class="section" id="searching-for-packages">
+<h2><a class="toc-backref" href="#id1">Searching for packages</a><a class="headerlink" href="#searching-for-packages" title="제목 주소">¶</a></h2>
+<p>Use the terminal or an Anaconda Prompt for the following steps.</p>
+<p>To see if a specific package, such as SciPy, is available for
+installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search scipy
+</pre></div>
+</div>
+<p>To see if a specific package, such as SciPy, is available for
+installation from Anaconda.org:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search --override-channels --channel defaults scipy
+</pre></div>
+</div>
+<p>To see if a specific package, such as iminuit, exists in a
+specific channel, such as <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>,
+and is available for installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search --override-channels --channel http://conda.anaconda.org/mutirri iminuit
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-packages">
+<h2><a class="toc-backref" href="#id2">Installing packages</a><a class="headerlink" href="#installing-packages" title="제목 주소">¶</a></h2>
+<p>Use the terminal or an Anaconda Prompt for the following steps.</p>
+<p>To install a specific package such as SciPy into an existing
+environment &quot;myenv&quot;:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install --name myenv scipy
+</pre></div>
+</div>
+<p>If you do not specify the environment name, which in this
+example is done by <code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">myenv</span></code>, the package installs
+into the current environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install scipy
+</pre></div>
+</div>
+<p>To install a specific version of a package such as SciPy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0
+</pre></div>
+</div>
+<p id="installing-multiple-packages">To install multiple packages at once, such as SciPy and cURL:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install scipy curl
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">It is best to install all packages at once, so that all of
+the dependencies are installed at the same time.</p>
+</div>
+<p>To install multiple packages at once and specify the version of
+the package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0 <span class="nv">curl</span><span class="o">=</span><span class="m">7</span>.26.0
+</pre></div>
+</div>
+<p>To install a package for a specific Python version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0 <span class="nv">curl</span><span class="o">=</span><span class="m">7</span>.26.0 -n py34_env
+</pre></div>
+</div>
+<p>If you want to use a specific Python version, it is best to use
+an environment with that version. For more information,
+see <a class="reference internal" href="../troubleshooting.html"><span class="doc">Troubleshooting</span></a>.</p>
+</div>
+<div class="section" id="installing-packages-from-anaconda-org">
+<h2><a class="toc-backref" href="#id3">Installing packages from Anaconda.org</a><a class="headerlink" href="#installing-packages-from-anaconda-org" title="제목 주소">¶</a></h2>
+<p>Packages that are not available using conda install can be
+obtained from Anaconda.org. Formerly Binstar.org, Anaconda.org,
+is a package management service for both public and private
+package repositories. Anaconda.org is an Anaconda
+product, just like Anaconda and Miniconda.</p>
+<p>To install a package from Anaconda.org:</p>
+<ol class="arabic">
+<li><p class="first">In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.</p>
+</li>
+<li><p class="first">To find the package named bottleneck, type <code class="docutils literal notranslate"><span class="pre">bottleneck</span></code>
+in the top-left box named Search Packages.</p>
+</li>
+<li><p class="first">Find the package that you want and click it to go to the
+detail page.</p>
+<p>The detail page displays the name of the channel. In this
+example it is the &quot;pandas&quot; channel.</p>
+</li>
+<li><p class="first">Now that you know the channel name, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>
+command to install the package. In your terminal window or
+an Anaconda Prompt, run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pandas</span> <span class="n">bottleneck</span>
+</pre></div>
+</div>
+<p>This command tells conda to install the bottleneck package
+from the pandas channel on Anaconda.org.</p>
+</li>
+<li><p class="first">To check that the package is installed, in your terminal window
+or an Anaconda Prompt, run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>A list of packages appears, including bottleneck.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">For information on installing packages from multiple
+channels, see <a class="reference internal" href="manage-channels.html"><span class="doc">Managing channels</span></a>.</p>
+</div>
+</div>
+<div class="section" id="installing-non-conda-packages">
+<h2><a class="toc-backref" href="#id4">Installing non-conda packages</a><a class="headerlink" href="#installing-non-conda-packages" title="제목 주소">¶</a></h2>
+<p>If a package is not available from conda or Anaconda.org, you may be able to
+find and install the package with another package manager like pip.</p>
+<p>Pip packages do not have all the features of conda packages and we recommend
+first trying to install any package with conda. If the package is unavailable
+through conda, try installing it with pip. The differences between pip and
+conda packages cause certain unavoidable limits in compatibility but conda
+works hard to be as compatible with pip as possible.</p>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">Both pip and conda are included in Anaconda and Miniconda, so you do not
+need to install them separately.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">Conda environments replace virtualenv, so there is no need to activate a
+virtualenv before using pip.</p>
+</div>
+<p>It is possible to have pip installed outside a conda environment or inside a
+conda environment.</p>
+<p>To gain the benefits of conda integration, be sure to install pip inside the
+currently active conda environment and then install packages with that
+instance of pip. The command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> shows packages installed this way,
+with a label showing that they were installed with pip.</p>
+<p>You can install pip in the current conda environment with the command
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pip</span></code>, as discussed in <a class="reference internal" href="manage-environments.html#pip-in-env"><span class="std std-ref">Using pip in an environment</span></a>.</p>
+<p>If there are instances of pip installed both inside and outside the current
+conda environment, the instance of pip installed inside the current conda
+environment is used.</p>
+<p>To install a non-conda package:</p>
+<ol class="arabic">
+<li><p class="first">Activate the environment where you want to put the program:</p>
+<ul class="simple">
+<li>On Windows, in your Anaconda Prompt, run <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">myenv</span></code>.</li>
+<li>On macOS and Linux,in your terminal window, run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">myenv</span></code>.</li>
+</ul>
+</li>
+<li><p class="first">To use pip to install a program such as See, in your terminal window or an Anaconda Prompt,
+run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">see</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To verify the package was installed, in your terminal window or an Anaconda Prompt,
+run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>If the package is not shown, install pip as described in <a class="reference internal" href="manage-environments.html#pip-in-env"><span class="std std-ref">Using pip in an environment</span></a>
+and try these commands again.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-commercial-packages">
+<h2><a class="toc-backref" href="#id5">Installing commercial packages</a><a class="headerlink" href="#installing-commercial-packages" title="제목 주소">¶</a></h2>
+<p>Installing a commercial package such as IOPro is the same as
+installing any other package. In your terminal window or an Anaconda Prompt,
+run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install --name myenv iopro
+</pre></div>
+</div>
+<p>This command installs a free trial of one of Anaconda's
+commercial packages called <a class="reference external" href="https://docs.continuum.io/iopro/">IOPro</a>, which can speed up your
+Python processing. Except for academic use, this free trial
+expires after 30 days.</p>
+</div>
+<div class="section" id="viewing-a-list-of-installed-packages">
+<h2><a class="toc-backref" href="#id6">Viewing a list of installed packages</a><a class="headerlink" href="#viewing-a-list-of-installed-packages" title="제목 주소">¶</a></h2>
+<p>Use the terminal or an Anaconda Prompt for the following steps.</p>
+<p>To list all of the packages in the active environment:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>To list all of the packages in a deactivated environment:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-packages">
+<h2><a class="toc-backref" href="#id7">Updating packages</a><a class="headerlink" href="#updating-packages" title="제목 주소">¶</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code> command to check to see if a new update is
+available. If conda tells you an update is available, you can
+then choose whether or not to install it.</p>
+<p>Use the terminal or an Anaconda Prompt for the following steps.</p>
+<p>To update a specific package:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">biopython</span>
+</pre></div>
+</div>
+<p>To update Python:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">python</span>
+</pre></div>
+</div>
+<p>To update conda itself:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">Conda updates to the highest version in its series, so
+Python 2.7 updates to the highest available in the 2.x series and
+3.6 updates to the highest available in the 3.x series.</p>
+</div>
+<p>To update the Anaconda metapackage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update conda
+conda update anaconda
+</pre></div>
+</div>
+<p>Regardless of what package you are updating, conda compares
+versions and then reports what is available to install. If no
+updates are available, conda reports &quot;All requested packages are
+already installed.&quot;</p>
+<p>If a newer version of your package is available and you wish to
+update it, type <code class="docutils literal notranslate"><span class="pre">y</span></code> to update:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
+</div>
+<div class="section" id="preventing-packages-from-updating-pinning">
+<span id="pinning-packages"></span><h2><a class="toc-backref" href="#id8">Preventing packages from updating (pinning)</a><a class="headerlink" href="#preventing-packages-from-updating-pinning" title="제목 주소">¶</a></h2>
+<p>Pinning a package specification in an environment prevents
+packages listed in the <code class="docutils literal notranslate"><span class="pre">pinned</span></code> file from being updated.</p>
+<p>In the environment's <code class="docutils literal notranslate"><span class="pre">conda-meta</span></code> directory, add a file
+named <code class="docutils literal notranslate"><span class="pre">pinned</span></code> that includes a list of the packages that you
+do not want updated.</p>
+<p>EXAMPLE: The file below forces NumPy to stay on the 1.7 series,
+which is any version that starts with 1.7, and forces SciPy to
+stay at exactly version 0.14.2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span> <span class="mf">1.7</span><span class="o">.*</span>
+<span class="n">scipy</span> <span class="o">==</span><span class="mf">0.14</span><span class="o">.</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>With this <code class="docutils literal notranslate"><span class="pre">pinned</span></code> file, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></code> keeps NumPy at
+1.7.1, and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.15.0</span></code> causes an error.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">--no-pin</span></code> flag to override the update restriction on
+a package. In the terminal or an Anaconda Prompt, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update numpy --no-pin
+</pre></div>
+</div>
+<p>Because the <code class="docutils literal notranslate"><span class="pre">pinned</span></code> specs are included with each conda
+install, subsequent <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code> commands without
+<code class="docutils literal notranslate"><span class="pre">--no-pin</span></code> will revert NumPy back to the 1.7 series.</p>
+</div>
+<div class="section" id="removing-packages">
+<h2><a class="toc-backref" href="#id9">Removing packages</a><a class="headerlink" href="#removing-packages" title="제목 주소">¶</a></h2>
+<p>Use the terminal or an Anaconda Prompt for the following steps.</p>
+<p>To remove a package such as SciPy in an environment such as
+myenv:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda remove -n myenv scipy
+</pre></div>
+</div>
+<p>To remove a package such as SciPy in the current environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda remove scipy
+</pre></div>
+</div>
+<p>To remove multiple packages at once, such as SciPy and cURL:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda remove scipy curl
+</pre></div>
+</div>
+<p>To confirm that a package has been removed:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manage-python.html" class="btn btn-neutral float-right" title="Managing Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create-custom-channels.html" class="btn btn-neutral" title="Creating custom channels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

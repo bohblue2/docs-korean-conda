@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing on macOS &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Installing on Linux" href="linux.html" />
+    <link rel="prev" title="Installing on Windows" href="windows.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#system-requirements">System requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#regular-installation">Regular installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#installing-in-silent-mode">Installing in silent mode</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#installing-conda-on-a-system-that-has-other-python-installations-or-packages">Installing conda on a system that has other Python installations or packages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="download.html">Downloading conda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="windows.html">Installing on Windows</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Installing on macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="linux.html">Installing on Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-installation.html">Testing your installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpm-debian.html">RPM and Debian Repositories for Miniconda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Installation</a> &raquo;</li>
+        
+      <li>Installing on macOS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/install/macos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-on-macos">
+<h1>Installing on macOS<a class="headerlink" href="#installing-on-macos" title="제목 주소">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Download the installer:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://conda.io/miniconda.html">Miniconda installer for macOS</a>.</li>
+<li><a class="reference external" href="https://www.anaconda.com/download/">Anaconda installer for macOS</a>.</li>
+</ul>
+</li>
+<li><p class="first">Install:</p>
+<ul>
+<li><p class="first">Miniconda---In your terminal window, run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">MacOSX</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Anaconda---Double-click the <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Follow the prompts on the installer screens.</p>
+<p>If you are unsure about any setting, accept the defaults. You
+can change them later.</p>
+</li>
+<li><p class="first">To make the changes take effect, close and then re-open your
+terminal window.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="test-installation.html"><span class="doc">Test your installation</span></a>.</p>
+</li>
+</ol>
+<div class="section" id="installing-in-silent-mode">
+<span id="install-macos-silent"></span><h2>Installing in silent mode<a class="headerlink" href="#installing-in-silent-mode" title="제목 주소">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">The following instructions are for Miniconda. For Anaconda,
+substitute <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> for <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> in all of the commands.</p>
+</div>
+<p>To run the <a class="reference internal" href="../../glossary.html#silent-mode-glossary"><span class="std std-ref">silent installation</span></a> of
+Miniconda for macOS or Linux, specify the -b and -p arguments of
+the bash installer. The following arguments are supported:</p>
+<ul class="simple">
+<li>-b---Batch mode with no PATH modifications to <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>.
+Assumes that you agree to the license agreement. Does not edit
+the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> files.</li>
+<li>-p---Installation prefix/path.</li>
+<li>-f---Force installation even if prefix -p already exists.</li>
+</ul>
+<p>EXAMPLE:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">This sets the PATH only for the current session, not
+permanently. Trying to use conda when conda is not in your
+PATH causes errors such as &quot;command not found.&quot;</p>
+</div>
+<p>In each new bash session, before using conda, set the PATH and
+run the activation scripts of your conda packages by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>source $HOME/miniconda/bin/activate
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">Replace <code class="docutils literal notranslate"><span class="pre">$HOME/miniconda/bin/activate</span></code>
+with the path to the activate script in your conda installation.</p>
+</div>
+<p>To set the PATH permanently, you can add a line to your
+<code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file. However, this makes it possible to use conda
+without running the activation scripts of your conda packages,
+which may produce errors.</p>
+<p>EXAMPLE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/miniconda/bin:$PATH&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-anaconda-or-miniconda">
+<h2>Updating Anaconda or Miniconda<a class="headerlink" href="#updating-anaconda-or-miniconda" title="제목 주소">¶</a></h2>
+<ol class="arabic simple">
+<li>Open a terminal window.</li>
+<li>Navigate to the <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> directory.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="uninstalling-anaconda-or-miniconda">
+<h2>Uninstalling Anaconda or Miniconda<a class="headerlink" href="#uninstalling-anaconda-or-miniconda" title="제목 주소">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open a terminal window.</p>
+</li>
+<li><p class="first">Remove the entire Miniconda install directory with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">miniconda</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You may also:</p>
+</li>
+<li><p class="first">OPTIONAL: Edit <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> to remove the Miniconda
+directory from your PATH environment variable.</p>
+</li>
+<li><p class="first">Remove the following hidden file and folders that may have
+been created in the home directory:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file</li>
+<li><code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory</li>
+<li><code class="docutils literal notranslate"><span class="pre">.continuum</span></code> directory</li>
+</ul>
+<p>By running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/.</span><span class="n">condarc</span> <span class="o">~/.</span><span class="n">conda</span> <span class="o">~/.</span><span class="n">continuum</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="linux.html" class="btn btn-neutral float-right" title="Installing on Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="windows.html" class="btn btn-neutral" title="Installing on Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

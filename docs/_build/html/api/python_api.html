@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>conda.api.python_api &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="conda.api" href="api.html" />
+    <link rel="prev" title="conda.api.Solver" href="solver.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Conda Python API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="solver.html"><code class="docutils literal notranslate"><span class="pre">conda.api.Solver</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">conda.api.python_api</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html"><code class="docutils literal notranslate"><span class="pre">conda.api</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Conda Python API</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">conda.api.python_api</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/python_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-conda.cli.python_api">
+<span id="conda-api-python-api"></span><h1><code class="docutils literal notranslate"><span class="pre">conda.api.python_api</span></code><a class="headerlink" href="#module-conda.cli.python_api" title="제목 주소">¶</a></h1>
+<dl class="class">
+<dt id="conda.cli.python_api.Commands">
+<em class="property">class </em><code class="descclassname">conda.cli.python_api.</code><code class="descname">Commands</code><a class="headerlink" href="#conda.cli.python_api.Commands" title="정의 주소">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="conda.cli.python_api.Commands.CLEAN">
+<code class="descname">CLEAN</code><em class="property"> = 'clean'</em><a class="headerlink" href="#conda.cli.python_api.Commands.CLEAN" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.CONFIG">
+<code class="descname">CONFIG</code><em class="property"> = 'config'</em><a class="headerlink" href="#conda.cli.python_api.Commands.CONFIG" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.CREATE">
+<code class="descname">CREATE</code><em class="property"> = 'create'</em><a class="headerlink" href="#conda.cli.python_api.Commands.CREATE" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.HELP">
+<code class="descname">HELP</code><em class="property"> = 'help'</em><a class="headerlink" href="#conda.cli.python_api.Commands.HELP" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.INFO">
+<code class="descname">INFO</code><em class="property"> = 'info'</em><a class="headerlink" href="#conda.cli.python_api.Commands.INFO" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.INSTALL">
+<code class="descname">INSTALL</code><em class="property"> = 'install'</em><a class="headerlink" href="#conda.cli.python_api.Commands.INSTALL" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.LIST">
+<code class="descname">LIST</code><em class="property"> = 'list'</em><a class="headerlink" href="#conda.cli.python_api.Commands.LIST" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.REMOVE">
+<code class="descname">REMOVE</code><em class="property"> = 'remove'</em><a class="headerlink" href="#conda.cli.python_api.Commands.REMOVE" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.RUN">
+<code class="descname">RUN</code><em class="property"> = 'run'</em><a class="headerlink" href="#conda.cli.python_api.Commands.RUN" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.SEARCH">
+<code class="descname">SEARCH</code><em class="property"> = 'search'</em><a class="headerlink" href="#conda.cli.python_api.Commands.SEARCH" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="conda.cli.python_api.Commands.UPDATE">
+<code class="descname">UPDATE</code><em class="property"> = 'update'</em><a class="headerlink" href="#conda.cli.python_api.Commands.UPDATE" title="정의 주소">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="conda.cli.python_api.run_command">
+<code class="descclassname">conda.cli.python_api.</code><code class="descname">run_command</code><span class="sig-paren">(</span><em>command</em>, <em>*arguments</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#conda.cli.python_api.run_command" title="정의 주소">¶</a></dt>
+<dd><p>Runs a conda command in-process with a given set of command-line interface arguments.</p>
+<dl class="docutils">
+<dt>Differences from the command-line interface:</dt>
+<dd>Always uses --yes flag, thus does not ask for confirmation.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">매개 변수:</th><td class="field-body"><ul class="first last simple">
+<li><strong>command</strong> -- one of the Commands.X</li>
+<li><strong>*arguments</strong> -- instructions you would normally pass to the conda comamnd on the command line
+see below for examples. Be very careful to delimit arguements exactly as you
+want them to be delivered. No 'combine then split at spaces' or other
+information destroying processing gets performed on the arguments.</li>
+<li><strong>**kwargs</strong> -- <p>special instructions for programmatic overrides
+use_exception_handler: defaults to False.  False will let the code calling</p>
+<blockquote>
+<div><cite>run_command</cite> handle all exceptions.  True won't raise when an exception
+has occured, and instead give a non-zero return code</div></blockquote>
+<dl class="docutils">
+<dt>search_path: an optional non-standard search path for configuration information</dt>
+<dd>that overrides the default SEARCH_PATH</dd>
+<dt>stdout: Define capture behavior for stream sys.stdout. Defaults to STRING.</dt>
+<dd>STRING captures as a string.  None leaves stream untouched.
+Otherwise redirect to file-like object stdout.</dd>
+<dt>stderr: Define capture behavior for stream sys.stderr. Defaults to STRING.</dt>
+<dd>STRING captures as a string.  None leaves stream untouched.
+STDOUT redirects to stdout target and returns None as stderr value.
+Otherwise redirect to file-like object stderr.</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns: a tuple of stdout, stderr, and return_code.</dt>
+<dd>stdout, stderr are either strings, None or the corresponding file-like function argument.</dd>
+</dl>
+<p class="rubric">Examples</p>
+<dl class="docutils">
+<dt>&gt;&gt;  run_command(Commands.CREATE, &quot;-n&quot;, &quot;newenv&quot;, &quot;python=3&quot;, &quot;flask&quot;,</dt>
+<dd>use_exception_handler=True)</dd>
+</dl>
+<p>&gt;&gt;  run_command(Commands.CREATE, &quot;-n&quot;, &quot;newenv&quot;, &quot;python=3&quot;, &quot;flask&quot;)
+&gt;&gt;  run_command(Commands.CREATE, [&quot;-n&quot;, &quot;newenv&quot;, &quot;python=3&quot;, &quot;flask&quot;], search_path=())</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="conda.api" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="solver.html" class="btn btn-neutral" title="conda.api.Solver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

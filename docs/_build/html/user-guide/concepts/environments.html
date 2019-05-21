@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conda environments &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Installing with conda" href="installing-with-conda.html" />
+    <link rel="prev" title="Conda channels" href="channels.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="packages.html">Conda packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pkg-specs.html">Conda package specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="channels.html">Conda channels</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Conda environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#conda-directory-structure">Conda directory structure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installing-with-conda.html">Installing with conda</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Concepts</a> &raquo;</li>
+        
+      <li>Conda environments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/concepts/environments.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-environments">
+<h1>Conda environments<a class="headerlink" href="#conda-environments" title="제목 주소">¶</a></h1>
+<p>A conda environment is a directory that contains a specific
+collection of conda packages that you have installed. For
+example, you may have one environment with NumPy 1.7 and its
+dependencies, and another environment with NumPy 1.6 for legacy
+testing. If you change one environment, your other environments
+are not affected. You can easily activate or deactivate
+environments, which is how you switch between them. You can also
+share your environment with someone by giving them a copy of your
+<code class="docutils literal notranslate"><span class="pre">environment.yaml</span></code> file. For more information, see
+<a class="reference internal" href="../tasks/manage-environments.html"><span class="doc">Managing environments</span></a>.</p>
+<div class="section" id="conda-directory-structure">
+<h2>Conda directory structure<a class="headerlink" href="#conda-directory-structure" title="제목 주소">¶</a></h2>
+<div class="section" id="root-dir">
+<h3><code class="docutils literal notranslate"><span class="pre">ROOT_DIR</span></code><a class="headerlink" href="#root-dir" title="제목 주소">¶</a></h3>
+<p>The directory that Anaconda or Miniconda was installed into.</p>
+<p>EXAMPLES:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/opt/Anaconda  <span class="c1">#Linux</span>
+C:<span class="se">\A</span>naconda    <span class="c1">#Windows</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pkgs">
+<h3><code class="docutils literal notranslate"><span class="pre">/pkgs</span></code><a class="headerlink" href="#pkgs" title="제목 주소">¶</a></h3>
+<p>Also referred to as PKGS_DIR. This directory contains
+decompressed packages, ready to be linked in conda environments.
+Each package resides in a subdirectory corresponding to its
+canonical name.</p>
+</div>
+<div class="section" id="envs">
+<h3><code class="docutils literal notranslate"><span class="pre">/envs</span></code><a class="headerlink" href="#envs" title="제목 주소">¶</a></h3>
+<p>The system location for additional conda environments to be
+created.</p>
+<p>The following subdirectories comprise the default Anaconda
+environment:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/bin</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/include</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/lib</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/share</span></code></div>
+<div class="line"><br /></div>
+</div>
+<p>Other conda environments usually contain the same subdirectories
+as the default environment.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installing-with-conda.html" class="btn btn-neutral float-right" title="Installing with conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="channels.html" class="btn btn-neutral" title="Conda channels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

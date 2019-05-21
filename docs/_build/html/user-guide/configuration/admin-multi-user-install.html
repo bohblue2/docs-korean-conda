@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Administering a multi-user conda installation &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="Enabling tab completion" href="enable-tab-completion.html" />
+    <link rel="prev" title="Sample .condarc file" href="sample-condarc.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="use-condarc.html">Using the .condarc conda configuration file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample-condarc.html">Sample .condarc file</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Administering a multi-user conda installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-administrator-controlled-installation">Example administrator-controlled installation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enable-tab-completion.html">Enabling tab completion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pip-interoperability.html">Improving interoperability with pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-winxp-with-proxy.html">Using conda on Windows XP with or without a proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="disable-ssl-verification.html">Disabling SSL verification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Configuration</a> &raquo;</li>
+        
+      <li>Administering a multi-user conda installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/user-guide/configuration/admin-multi-user-install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="administering-a-multi-user-conda-installation">
+<h1>Administering a multi-user conda installation<a class="headerlink" href="#administering-a-multi-user-conda-installation" title="제목 주소">¶</a></h1>
+<p>By default, conda and all packages it installs, including
+Anaconda, are installed locally with a user-specific
+configuration. Administrative privileges are not required, and
+no upstream files or other users are affected by
+the installation.</p>
+<p>You can make conda and any number of packages available to a
+group of 1 or more users, while preventing these users
+from installing unwanted packages with conda:</p>
+<ol class="arabic simple">
+<li>Install conda and the allowed packages, if any, in a
+location that is under administrator control and
+accessible to users.</li>
+<li>Create a
+<a class="reference internal" href="use-condarc.html"><span class="doc">.condarc system configuration file</span></a> in
+the root directory of the installation. This system-level
+configuration file will override any user-level configuration
+files installed by the user.</li>
+</ol>
+<p>Each user accesses the central conda installation, which reads
+settings from the user <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> configuration file located
+in their home directory. The path to the user file is the same
+as the root environment prefix displayed by <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code>,
+as shown in <a class="reference internal" href="#admin-inst-user"><span class="std std-ref">User configuration file</span></a> below. The user
+<code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file is limited by the system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file.</p>
+<p>System configuration settings are commonly used in a
+system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file but may also be used in a
+user <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file. All user configuration settings may
+also be used in a system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file.</p>
+<p>For information about settings in the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file,
+see <a class="reference internal" href="use-condarc.html"><span class="doc">Using the .condarc conda configuration file</span></a>.</p>
+<div class="section" id="example-administrator-controlled-installation">
+<span id="admin-inst"></span><h2>Example administrator-controlled installation<a class="headerlink" href="#example-administrator-controlled-installation" title="제목 주소">¶</a></h2>
+<p>The following example describes how to view the system
+configuration file, review the settings, compare it to a user's
+configuration file and determine what happens when the user
+attempts to access a file from a blocked channel. It then
+describes how the user must modify their configuration file to
+access the channels allowed by the administrator.</p>
+<div class="section" id="system-configuration-file">
+<h3>System configuration file<a class="headerlink" href="#system-configuration-file" title="제목 주소">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">The system configuration file must be in the top-level conda
+installation directory. Check the path where conda is located:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ which conda
+/tmp/miniconda/bin/conda
+</pre></div>
+</div>
+</li>
+<li><p class="first">View the contents of the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file in the
+administrator's directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /tmp/miniconda/.condarc
+</pre></div>
+</div>
+<p>The following administrative <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file
+sets <code class="docutils literal notranslate"><span class="pre">allow_other_channels</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>, and it specifies
+that users may download packages only from the <code class="docutils literal notranslate"><span class="pre">admin</span></code>
+channel:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat /tmp/miniconda/.condarc
+allow_other_channels : <span class="nb">false</span>
+channel_alias: https://conda.anaconda.org/
+channels:
+  - admin
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">주석</p>
+<p class="last">The admin channel can also be expressed as
+<a class="reference external" href="https://conda.anaconda.org/admin/">https://conda.anaconda.org/admin/</a></p>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">allow_other_channels</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> and the
+channel defaults are not explicitly specified, users are
+disallowed from downloading packages from the default
+channels. You can check this in the next procedure.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="user-configuration-file">
+<span id="admin-inst-user"></span><h3>User configuration file<a class="headerlink" href="#user-configuration-file" title="제목 주소">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Check the location of the user's conda installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda info
+Current conda install:
+. . .
+       channel URLs : http://repo.continuum.io/pkgs/free/osx-64/
+                      http://repo.continuum.io/pkgs/pro/osx-64/
+       config file : /Users/gergely/.condarc
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code> command shows that conda is using the
+user's <code class="docutils literal notranslate"><span class="pre">.condarc</span> <span class="pre">file</span></code>, located at
+<code class="docutils literal notranslate"><span class="pre">/Users/gergely/.condarc</span></code> and that the default channels
+such as <code class="docutils literal notranslate"><span class="pre">repo.continuum.io</span></code> are listed as channel URLs.</p>
+</li>
+<li><p class="first">View the contents of the administrative <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file in
+the directory that was located in step 1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat ~/.condarc
+channels:
+  - defaults
+</pre></div>
+</div>
+<p>This user's <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file specifies only the default
+channels, but the administrator config file has blocked
+default channels by specifying that only <code class="docutils literal notranslate"><span class="pre">admin</span></code> is
+allowed. If this user attempts to search for a package in the
+default channels, they get a message telling them what
+channels are allowed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda search flask
+Fetching package metadata:
+Error: URL <span class="s1">&#39;http://repo.continuum.io/pkgs/pro/osx-64/&#39;</span> not
+in allowed channels.
+Allowed channels are:
+ - https://conda.anaconda.org/admin/osx-64/
+</pre></div>
+</div>
+<p>This error message tells the user to add the <code class="docutils literal notranslate"><span class="pre">admin</span></code> channel
+to their configuration file.</p>
+</li>
+<li><p class="first">The user must edit their local <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> configuration file
+to access the package through the admin channel:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">channels</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
+</pre></div>
+</div>
+<p>The user can now search for packages in the allowed
+<code class="docutils literal notranslate"><span class="pre">admin</span></code> channel.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="enable-tab-completion.html" class="btn btn-neutral float-right" title="Enabling tab completion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sample-condarc.html" class="btn btn-neutral" title="Sample .condarc file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

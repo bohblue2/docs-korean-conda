@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>conda remove &mdash; conda 4.7.0.post4+84b69c164 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="next" title="conda search" href="search.html" />
+    <link rel="prev" title="conda package" href="package.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.7.0.post4+84b69c164
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Conda Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Conda Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="clean.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">clean</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="create.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="info.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="list.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">package</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">remove</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Positional Arguments">Positional Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Named Arguments">Named Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Target Environment Specification">Target Environment Specification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Channel Customization">Channel Customization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Solver Mode Modifiers">Solver Mode Modifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Networking Options">Networking Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Output, Prompt, and Flow Control Options">Output, Prompt, and Flow Control Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="search.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="update.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-vs-pip-vs-virtualenv-commands">Conda vs. pip vs. virtualenv commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">conda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../commands.html">Command reference</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">remove</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/commands/remove.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-remove">
+<h1><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">remove</span></code><a class="headerlink" href="#conda-remove" title="제목 주소">¶</a></h1>
+<p><p>Remove a list of packages from a specified conda environment.</p>
+<blockquote>
+<div>This command will also remove any package that depends on any of the
+specified packages as well---unless a replacement can be found without
+that dependency. If you wish to skip this dependency checking and remove
+just the requested packages, add the '--force' option. Note however that
+this may result in a broken environment, so use this with caution.</div></blockquote>
+<p>Options:</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">conda</span> <span class="n">remove</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">n</span> <span class="n">ENVIRONMENT</span> <span class="o">|</span> <span class="o">-</span><span class="n">p</span> <span class="n">PATH</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="n">CHANNEL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">local</span><span class="p">]</span>
+                    <span class="p">[</span><span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">repodata</span><span class="o">-</span><span class="n">fn</span> <span class="n">REPODATA_FN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">all</span><span class="p">]</span>
+                    <span class="p">[</span><span class="o">--</span><span class="n">features</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">remove</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">pin</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">prune</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">C</span><span class="p">]</span>
+                    <span class="p">[</span><span class="o">-</span><span class="n">k</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">offline</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">json</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">q</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">y</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">dev</span><span class="p">]</span>
+                    <span class="p">[</span><span class="n">package_name</span> <span class="p">[</span><span class="n">package_name</span> <span class="o">...</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="section" id="Positional Arguments">
+<h2>Positional Arguments<a class="headerlink" href="#Positional Arguments" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd>package_name</kbd></td>
+<td>Package names to remove from the environment.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Named Arguments">
+<h2>Named Arguments<a class="headerlink" href="#Named Arguments" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd>--dev</kbd></td>
+<td>Use <cite>sys.executable -m conda</cite> in wrapper scripts instead of CONDA_EXE This is mainly for use during tests where we test new conda source against old Python versions.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Target Environment Specification">
+<h2>Target Environment Specification<a class="headerlink" href="#Target Environment Specification" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd>-n, --name</kbd></td>
+<td>Name of environment.</td></tr>
+<tr><td class="option-group">
+<kbd>-p, --prefix</kbd></td>
+<td>Full path to environment location (i.e. prefix).</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Channel Customization">
+<h2>Channel Customization<a class="headerlink" href="#Channel Customization" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd>-c, --channel</kbd></td>
+<td><dl class="first last docutils">
+<dt>Additional channel to search for packages. These are URLs searched in the order</dt>
+<dd>they are given (including <a class="reference external" href="file://">file://</a> for local directories).  Then, the defaults
+or channels from .condarc are searched (unless --override-channels is given).  You can use
+'defaults' to get the default packages for conda.  You can also use any name and the
+.condarc channel_alias value will be prepended.  The default channel_alias
+is <a class="reference external" href="http://conda.anaconda.org/">http://conda.anaconda.org/</a>.</dd>
+</dl>
+</td></tr>
+<tr><td class="option-group">
+<kbd>--use-local</kbd></td>
+<td>Use locally built packages. Identical to '-c local'.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd>--override-channels</kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Do not search default or .condarc channels.  Requires --channel.</td></tr>
+<tr><td class="option-group">
+<kbd>--repodata-fn</kbd></td>
+<td>Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Solver Mode Modifiers">
+<h2>Solver Mode Modifiers<a class="headerlink" href="#Solver Mode Modifiers" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd>--all</kbd></td>
+<td>Remove all packages, i.e., the entire environment.</td></tr>
+<tr><td class="option-group">
+<kbd>--features</kbd></td>
+<td>Remove features (instead of packages).</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd>--force-remove, --force</kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Forces removal of a package without removing packages that depend on it. Using this option will usually leave your environment in a broken and inconsistent state.</td></tr>
+<tr><td class="option-group">
+<kbd>--no-pin</kbd></td>
+<td>Ignore pinned file.</td></tr>
+<tr><td class="option-group">
+<kbd>--prune</kbd></td>
+<td>Remove packages that have previously been brought into the environment to satisfy dependencies of user-requested packages, but are no longer needed.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Networking Options">
+<h2>Networking Options<a class="headerlink" href="#Networking Options" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd>-C, --use-index-cache</kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Use cache of channel index files, even if it has expired.</td></tr>
+<tr><td class="option-group">
+<kbd>-k, --insecure</kbd></td>
+<td>Allow conda to perform &quot;insecure&quot; SSL connections and transfers. Equivalent to setting 'ssl_verify' to 'false'.</td></tr>
+<tr><td class="option-group">
+<kbd>--offline</kbd></td>
+<td>Offline mode. Don't connect to the Internet.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Output, Prompt, and Flow Control Options">
+<h2>Output, Prompt, and Flow Control Options<a class="headerlink" href="#Output, Prompt, and Flow Control Options" title="제목 주소">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd>-d, --dry-run</kbd></td>
+<td>Only display what would have been done.</td></tr>
+<tr><td class="option-group">
+<kbd>--json</kbd></td>
+<td>Report all output as json. Suitable for using conda programmatically.</td></tr>
+<tr><td class="option-group">
+<kbd>-q, --quiet</kbd></td>
+<td>Do not display progress bar.</td></tr>
+<tr><td class="option-group">
+<kbd>-v, --verbose</kbd></td>
+<td>Can be used multiple times. Once for INFO, twice for DEBUG, three times for TRACE.</td></tr>
+<tr><td class="option-group">
+<kbd>-y, --yes</kbd></td>
+<td>Do not ask for confirmation.</td></tr>
+</tbody>
+</table>
+</div>
+<p><p>Examples:</p>
+<blockquote>
+<div>conda remove -n myenv scipy</div></blockquote>
+</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="search.html" class="btn btn-neutral float-right" title="conda search" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="package.html" class="btn btn-neutral" title="conda package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.7.0.post4+84b69c164',
+            LANGUAGE:'ko',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script>
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
