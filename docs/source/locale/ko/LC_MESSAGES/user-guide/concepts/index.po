@@ -30,6 +30,6 @@ msgid ""
 "When you're comfortable with the conda concepts, learn how to :doc:`get "
 "started using conda <../getting-started>`."
 msgstr ""
-"conda 개념에 익숙해 졌다면, 어떻게 :doc:`conda 를 시작 <../getting-started>` "
+"conda 개념에 익숙해 졌다면, 어떻게 :doc:`conda 를 시작 <../getting-started>`\ "
 "하는지 알아보십시오."
 
