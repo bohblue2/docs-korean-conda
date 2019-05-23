@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/user-guide/concepts/installing-with-conda.rst:3
 msgid "Installing with conda"
-msgstr "Conda 로 설치하기"
+msgstr "Conda로 설치하기"
 
 #: ../../source/user-guide/concepts/installing-with-conda.rst:11
 msgid "To install conda packages, in the terminal or an Anaconda Prompt, run::"
@@ -38,14 +38,14 @@ msgstr ""
 "환경이 없을 경우 현재 환경이 기본값으로 설정됩니다."
 "conda 패키지 파일을 환경에 설치하는 것은 환경의 디렉토리를 변경한 다음, 그 파일과"
 "모든 의존성(dependencies)들을 다운로드하여 단일 명령으로 추출 "
-"``conda install [packagename]`` 하는 것으로 생각할 수 있습니다."
+"``conda install [packagename]``\ 하는 것으로 생각할 수 있습니다."
 
 #: ../../source/user-guide/concepts/installing-with-conda.rst:24
 msgid ""
 "Read more about :doc:`conda environments and directory structure "
 "<../concepts/environments>`."
 msgstr ""
-":doc:`conda environments and directory structure <../concepts/environments>` 을 "
+":doc:`Conda 환경(environments) <../concepts/environments>`\ 을 "
 "참조해 보십시오."
 
 #: ../../source/user-guide/concepts/installing-with-conda.rst:26
@@ -53,7 +53,7 @@ msgid ""
 "When you ``conda install`` a package that exists in a channel and has no "
 "dependencies, conda:"
 msgstr ""
-"채널에 존재하고 종속성이 없는 패키지를 ``conda install`` 할때:"
+"채널에 존재하고 종속성이 없는 패키지를 ``conda install``\ 할때:"
 
 #: ../../source/user-guide/concepts/installing-with-conda.rst:28
 msgid "looks at your configured channels (in priority)"
