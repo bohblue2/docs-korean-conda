@@ -36,11 +36,11 @@ msgid ""
 "or internal channel. For details, see how to :ref:``modify your channel "
 "lists <config-channels>`."
 msgstr ""
-"Conda :doc:`패키지 <packages>` 들은 conda 패키지들이 있는 디렉토리의"
-"URL인 원격 채널로부터 다운로드 됩니다. ``conda`` 명령어는 기본 채널 셋트를 검색하고,"
+"Conda :doc:`패키지 <packages>`\ 들은 conda 패키지들이 있는 디렉토리의"
+"URL인 원격 채널로부터 다운로드 됩니다. ``conda``\ 명령어는 기본 채널 셋트를 검색하고,"
 "패키지들은 https://repo.anaconda.com/pkgs/ 으로부터 자동적으로 다운로드 되고 업데이트 됩니다."
 "자동적으로 검색되는 원격 채널들을 변경할 수 있습니다. 혹은 사설 혹은 내부 채널을 만들어 관리할 수 있습니다."
-" 더 자세한 정보는 :ref:`modify your channel lists <config-channels>` 를 참조 하십시오."
+" 더 자세한 정보는 :ref:`modify your channel lists <config-channels>`\ 를 참조 하십시오."
 
 #: ../../source/user-guide/concepts/channels.rst:27
 msgid "Specifying channels when installing packages"
@@ -82,5 +82,5 @@ msgstr ""
 
 #: ../../source/user-guide/concepts/channels.rst:51
 msgid "Learn more about :doc:`managing channels <../tasks/manage-channels>`."
-msgstr "더 많은 정보는 :doc:`채널 관리하기 <../tasks/manage-channels>` 를 참조해 주십시오."
+msgstr "더 많은 정보는 :doc:`채널 관리하기 <../tasks/manage-channels>`\ 를 참조해 주십시오."
 
