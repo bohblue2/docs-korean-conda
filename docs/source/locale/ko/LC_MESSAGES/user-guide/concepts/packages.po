@@ -43,14 +43,14 @@ msgstr "실행 가능한(executable) 프로그램들과 다른 컴포넌트들"
 
 #: ../../source/user-guide/concepts/packages.rst:19
 msgid "metadata under the ``info/`` directory"
-msgstr "``info/`` 디렉토리(directory) 아래 있는 메타데이터"
+msgstr "``info/``\ 디렉토리(directory) 아래 있는 메타데이터"
 
 #: ../../source/user-guide/concepts/packages.rst:20
 msgid ""
 "a collection of files that are installed directly into an ``install`` "
 "prefix"
 msgstr ""
-"``install`` 명령어로 설치되어질 수 있는 파일들의 집합(collection)."
+"``install``\ 명령어로 설치되어질 수 있는 파일들의 집합(collection)."
 
 #: ../../source/user-guide/concepts/packages.rst:22
 msgid ""
@@ -89,7 +89,7 @@ msgid ""
 "You may build a package after `installing conda build "
 "<https://docs.conda.io/projects/conda-build/en/latest/index.html>`_"
 msgstr ""
-"`Conda 빌드 설치하기 <https://docs.conda.io/projects/conda-build/en/latest/index.html>`_ 를 한 후"
+"`Conda 빌드 설치하기 <https://docs.conda.io/projects/conda-build/en/latest/index.html>`_\ 를 한 후"
 "conda 패키지를 빌드할 수 있습니다"
 
 #: ../../source/user-guide/concepts/packages.rst:57
@@ -134,8 +134,8 @@ msgid ""
 "about package metadata, repository structure and index, and package match"
 " specifications at :doc:`Package specifications <../concepts/pkg-specs>`."
 msgstr ""
-"어떻게 :ref:`패키지 관리 <managing-pkgs>` 하는지 알아보십시오. 그리고 "
+"어떻게 :ref:`패키지 관리 <managing-pkgs>`\ 하는지 알아보십시오. 그리고 "
 "패키지 메타데이터, 레포지토리 구조와 인덱스, 패키지 일치 사양 에 대해 알아보시려면"
-" :doc:`Package specifications <../concepts/pkg-specs>` 를 참조해 보십시오."
+" :doc:`Package specifications <../concepts/pkg-specs>`\ 를 참조해 보십시오."
 
 
