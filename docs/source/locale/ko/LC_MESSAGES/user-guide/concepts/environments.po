@@ -36,8 +36,8 @@ msgstr ""
 "conda 환경은 사용자가 설치 한 특정 conda 패키지 콜렉션이 들어있는 디렉토리입니다. "
 "예를 들어, NumPy 1.7 및 의존성이있는 환경 하나와 레거시 테스트를 위해 NumPy 1.6이있는 다른 환경이 있을 수 있습니다. "
 "하나의 환경을 변경하면 다른 환경에 영향을주지 않습니다. 하나의 환경을 활성화 또는 비활성화 하여 쉽게 환경을 변경할 수 있습니다."
-"또한 ``environment.yaml`` 파일 사본을 제공하여 사용자 환경을 다른 사용자와 공유 할 수 있습니다"
-"자세한 내용은 환경 관리를 참조하십시오 . :doc:`../tasks/manage-environments`."
+"또한 ``environment.yaml``\ 파일 사본을 제공하여 사용자 환경을 다른 사용자와 공유 할 수 있습니다"
+"자세한 내용은 :doc:`../tasks/manage-environments`\ 를 참조하십시오."
 
 #: ../../source/user-guide/concepts/environments.rst:18
 msgid "Conda directory structure"
